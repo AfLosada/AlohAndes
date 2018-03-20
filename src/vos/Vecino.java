@@ -22,7 +22,7 @@ public class Vecino extends PersonaNatural
 	//
 	
 	public Vecino(boolean camaraComercio, String nombreOperador, boolean superIntendenciaTurismo, int edad, int id,
-			boolean miembro, List<Vivienda> viviendas) {
+			boolean miembro, int idVecino) {
 		super(camaraComercio, nombreOperador, superIntendenciaTurismo, edad, id, miembro);
 		this.idVecino = idVecino;
 	}

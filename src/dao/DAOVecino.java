@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import vos.PersonaNatural;
 import vos.Vecino;
 
 public class DAOVecino {
@@ -110,7 +111,6 @@ public class DAOVecino {
 				vecino.isCamaraComercio(),
 				vecino.getNombreOperador(),
 				vecino.isSuperIntendenciaTurismo(),
-				vecino.getCapacidad(),
 				vecino.getIdVecino());
 		System.out.println(sql);
 
@@ -223,8 +223,14 @@ public class DAOVecino {
 		}
 		String capacidad = resultSet.getString("capacidad");
 		String id = resultSet.getString("id");
+		String miembro = resultSet.getString("miembro");
+		if(miembro.equals("1"))
+		{
+			rta3 = true;
+		}
+		String idVecino = resultSet.getString("idVecino");
 
-		Vecino beb = new Vecino(rta1, nombre, rta2, Integer.parseInt(capacidad), Integer.parseInt(id));
+		Vecino beb = new Vecino(rta1, nombre, rta2, Integer.parseInt(capacidad), Integer.parseInt(id), rta3, Integer.parseInt(idVecino));
 
 		return beb;
 	}
